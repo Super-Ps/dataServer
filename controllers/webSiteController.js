@@ -3,9 +3,8 @@ const createS = require('../modules/CreateStudent')
 const docConfig  = require('./docconfig')
 const fs = require("fs")
 const {myEmitter,login,getTeacherId,passShenhe} = require('../evet/eimt')
-// console.log('putInfomationdoc',docconfig.updateInfromation,docconfig.putInfomationdocB)
-
 const { request, summary, body, description, tags ,query ,path } = require('koa-swagger-decorator');
+
 
 class Controller{
     // constructor(){
@@ -44,7 +43,7 @@ class Controller{
     async updateInfromation(ctx){
 
         const registerPhoneNum = await apiSingle.register(ctx)
-        // console.log('######',registerPhoneNum)
+        
         const stringCookie = await apiSingle.login(ctx,registerPhoneNum)
         try{
         const putInfomation = await apiSingle.putInfomation(ctx,stringCookie)
@@ -58,10 +57,6 @@ class Controller{
             console.log('捕获异常',e.message)
             ctx.body =e.message
         }
-      //  const createTeam = await apiSingle.createTeam(ctx,stringCookie)
-      //  const addStudent = await apiSingle.addStudent(ctx,stringCookie,createTeam.id)
-        
-    
     }
 
 
@@ -74,11 +69,10 @@ class Controller{
         //创建老师
         let {trole, treferee, srole, sreferee,nrole,nreferee,count,age,teamnumber} = ctx.request.body;
 
-        // console.log('addStudent-ctx',ctx.request.body,trole,treferee)
         ctx.request.body = { trole: `${trole}`, treferee: `${treferee}`}
-        // console.log('ctx@@',ctx.request.body )
+
         const registerPhoneNum = await apiSingle.register(ctx)
-     //   console.log('######',registerPhoneNum)
+
         const stringCookie = await apiSingle.login(ctx,registerPhoneNum)
         const putInfomation = await apiSingle.putInfomation(ctx,stringCookie)
       
@@ -94,7 +88,7 @@ class Controller{
             let  sum = 0
             //创建战队
              createTeam = await apiSingle.createTeam(ctx,stringCookie)
-            // console.log('创建战队完毕',createTeam.team_no)
+       
             createTeamTeam_no.push(createTeam.team_no)
             const teamNo =await createS.createStudentNo(ctx) // 创建多少个用户并完善信息，返回手机号
             // console.log('teamNo',teamNo,'第N次创建战队 和学生',i)
@@ -102,8 +96,6 @@ class Controller{
             // let  addStudent
             teamNo.forEach( async element => {
                 
-                //  console.log('sun+' ,sum++)
-                // \console.log('学生元素-element',element)
               const  a = await apiSingle.addStudent(ctx,stringCookie,createTeam.id,element)
                if(a ==true){
                     sum++
@@ -124,8 +116,7 @@ class Controller{
     @summary('审批通过')
     @description('审批通过')
     async checkUseridCard (ctx){
-        
-        // let  jsonFilePhoneNum
+    
         fs.readFile('res.json',function(err,data){
             
             if(err){

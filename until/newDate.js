@@ -14,9 +14,6 @@ async function getdenfindDate (staus) {
         const minute = '00';//date.getMinutes()<10 ?'0'+date.getMinutes() :date.getMinutes();
         const second = '00';//date.getSeconds()<10 ?'0'+date.getSeconds() :date.getSeconds();
 
-        // let GMT = year+'-'+month+'-'+day+hour+':'+minute+':'+second
-        // console.log(year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second)
-        // console.log('gmt',new Date('2020-01-12 00:00:00'))
         return year+'-'+month+'-'+day+hour+':'+minute+':'+second
     }
         // 报名开始 缴费开始 为当天

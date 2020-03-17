@@ -52,15 +52,15 @@ async function getTeacherId(stringCookie,phoneno) {
 
     };
     try{
-        console.log('开始执行1')
+  
         let res = await rp(options)
-        console.log('开始执行2')
+        // console.log('开始执行2')
         const stringRes =JSON.parse(res)
-        console.log('开始执行3',stringRes)
+        // console.log('开始执行3',stringRes)
          console.log('拿到ID返回',stringRes.data[0].id)
-         console.log('开始执行4')
+        //  console.log('开始执行4')
         const id =  stringRes.data[0].id
-        console.log('开始执行5')
+        // console.log('开始执行5')
         return id 
         
     }catch(err){
@@ -90,7 +90,7 @@ async function passShenhe(stringCookie,id) {
     try{
         let res = await rp(options)
         const stringRes =JSON.parse(res)
-         console.log('审批',res,'审批2',stringRes)
+        //  console.log('审批',res,'审批2',stringRes)
         // const id =  stringRes.data[0].id
         return  res
         
@@ -101,11 +101,6 @@ async function passShenhe(stringCookie,id) {
 
 }
 
-// id	15216
-//status	done
-//role	teacher
-//level_role	
-// fail_msg	
 
 myEmitter.on('login',async (phoneno)=>{
     console.log('on-parm',phoneno)
@@ -113,13 +108,13 @@ myEmitter.on('login',async (phoneno)=>{
     const id  = await getTeacherId(cookie,phoneno)
     const ox = await passShenhe(cookie,id)
 
-    console.log('evet返回',id )
-    console.log('ox',ox)
+    // console.log('evet返回',id )
+    // console.log('ox',ox)
     
     
 })
 
-// myEmitter.emit('login',18873208626)
+
 
 
 

@@ -73,13 +73,5 @@ class ControllerBg{
 
 
 module.exports = new ControllerBg ()
-// 根据手机号查询出ID 
-// http://www.test.makex.cc/api/admin/user?name=&phone=14712243943&email=&role=&check=&id_num=&page=1&size=20&_=157890862253
-// http://www.test.makex.cc/api/admin/check_user_idCard 审核
-// {id	12572
-// status	done
-// role	teacher
-// level_role	
-// fail_msg}	
 
 
