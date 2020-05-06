@@ -59,12 +59,25 @@ const payment = {
 }
 
 
+const passportRegister ={
+  email:{type:'string', required: true, example: '格式：xuweiEmailTest，[姓名+Emai+Test ，不用写后缀@qq.com,默认qq.com]'},
+  count:{type:'int', required: true, example: '100  [整型]'}
+}
+
+const deletePassportUsers ={
+  email:{type:'string', required: true, example: '格式：xuweiEmailTest，[姓名+Emai+Test ，值需要写前缀查询条件]'},
+ 
+}
+
+
 module.exports= { 
   updateInfromation,
   teamAddStudent,
   createProject,
   newCreateAgmes,
   payment,
-  LineOne
+  LineOne,
+  passportRegister,
+  deletePassportUsers
 }
 

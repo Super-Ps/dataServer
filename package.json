@@ -13,11 +13,13 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "axios": "^0.19.0",
+    "bluebird": "^3.7.2",
     "chinese-random-name": "^1.0.0",
     "koa": "^2.8.2",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "koa-swagger-decorator": "^1.6.0",
+    "mysql": "^2.18.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "swagger-decorator": "0.0.22"

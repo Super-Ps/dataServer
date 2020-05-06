@@ -1,3 +1,5 @@
+const passportRegister =require('../modules/piliangzhuce')
+
 
 function getId_no(age){
     // console.log('age',age)
@@ -58,7 +60,8 @@ function getId_no(age){
      return {id_no_String,newBirthday}
 }
 
- getId_no(13)
+//  getId_no(13)
+//  passportRegister.querysqlList("boomertest")
 exports.idCard = getId_no
 
-console.log('2' ,getId_no(13))
+// console.log('2' ,getId_no(13))

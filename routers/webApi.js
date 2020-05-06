@@ -8,6 +8,7 @@ const apiSingle = require('../modules/makeXwebSite')
 const webSiteController = require('../controllers/webSiteController')
 const webSiteBgController = require ('../controllers/webStieBgContorller')
 const webSiteServers = require('../servers/webSiteServers')
+const passportApi = require("../controllers/peorjectEachApi")
 const json = require('../res.json')
 const pathName = 'https://test-usercenter.makex.cc/api/'
 
@@ -31,7 +32,9 @@ module.exports = router => {
 
     router.get('/lineOne',webSiteServers.webSiteLine)
 
-
+    router.post('/passportRegister',passportApi.register)  // passport 批量注册接口
+    
+    router.post('/passportdeleteUsers',passportApi.deletePassportUser)  // passport  删除用户
      function resJson(ctx){
             // console.log('11111')
           // console.log(fs.readFileSync('res.json') )
